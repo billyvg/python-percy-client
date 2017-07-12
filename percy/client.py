@@ -34,6 +34,8 @@ class Client(object):
         pull_request_number = kwargs.get('pull_request_number') \
             or self.environment.pull_request_number
         resources = kwargs.get('resources')
+        parallel_nonce = kwargs.get('parallel_nonce')
+        parallel_total_shards = kwargs.get('parallel_total_shards')
 
         data = {
             'data': {
@@ -42,6 +44,8 @@ class Client(object):
                     'branch': branch,
                     'commit-sha': commit_sha,
                     'pull-request-number': pull_request_number,
+                    'parallel-nonce': parallel_nonce,
+                    'parallel-total-shards': parallel_total_shards,
                 }
             }
         }
